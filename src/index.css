@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Proton Security Brand Colors */
+    --color-primary: 210 100% 12%;        /* deep navy #001f3f */
+    --color-accent: 199 100% 50%;         /* light blue #009dff */
+    --color-highlight: 48 100% 50%;       /* yellow #FFD400 */
+    --text-light: 0 0% 100%;              /* white */
+    --text-muted: 0 0% 90%;               /* light gray #e5e5e5 */
+    
+    --background: 0 0% 100%;
+    --foreground: 210 100% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 100% 12%;
+
+    --popover: 210 100% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 210 100% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 210 100% 12%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 199 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --highlight: 48 100% 50%;
+    --highlight-foreground: 210 100% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 199 100% 50%;
+
+    --radius: 0.5rem;
+    
+    /* Custom design tokens */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-elegant: 0 10px 40px -10px hsl(210 100% 12% / 0.3);
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 12%), hsl(210 80% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(199 100% 50%), hsl(199 100% 40%));
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 100% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 80% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 80% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 100% 12%;
+
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 199 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --highlight: 48 100% 50%;
+    --highlight-foreground: 210 100% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 18%;
+    --input: 210 40% 18%;
+    --ring: 199 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .btn-highlight {
+    @apply bg-highlight text-highlight-foreground hover:bg-highlight/90 transition-all duration-300 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 font-semibold px-6 py-3 rounded-lg;
+  }
+
+  .btn-outline-highlight {
+    @apply border-2 border-highlight text-highlight hover:bg-highlight hover:text-highlight-foreground transition-all duration-300 font-semibold px-6 py-3 rounded-lg;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);  /* Slides half the width for seamless loop */
+  }
+}
+
+.marquee-container {
+  overflow: hidden;  /* Hide overflow for seamless loop */
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;  /* 30s speed; adjust as needed */
+  width: max-content;  /* Allows full width for duplicated logos */
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;  /* Pause on hover */
+}
+
+/* Responsive: Slower on mobile */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 40s;  /* Slower on small screens */
+  }
+}
