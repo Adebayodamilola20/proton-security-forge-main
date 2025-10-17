@@ -32,8 +32,41 @@ const Board = () => {
             </div>
           </AnimatedSection>
 
+          {/* Executive Team Heading */}
+          <AnimatedSection delay={200}>
+            <div className="text-left">
+              <div className="inline-block">
+                <h2 className="text-4xl font-bold text-primary mb-2">
+                  Head Of Executives
+                </h2>
+                <div className="w-24 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto mt-1 mb-12"></div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* First Group - Up to Babatunde Ikotun */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-20">
+            {directors.slice(0, 5).map((director, index) => (
+              <AnimatedSection key={director.id} delay={index * 100}>
+                <DirectorCard director={director} />
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Second Group - From John Chinwendu Down */}
+          <AnimatedSection delay={300}>
+            <div className="text-left">
+              <div className="inline-block">
+                <h2 className="text-3xl font-bold text-primary mb-2">
+                  Managers 
+                </h2>
+                <div className="w-20 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto mt-1 mb-12"></div>
+              </div>
+            </div>
+          </AnimatedSection>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {directors.map((director, index) => (
+            {directors.slice(5).map((director, index) => (
               <AnimatedSection key={director.id} delay={index * 100}>
                 <DirectorCard director={director} />
               </AnimatedSection>

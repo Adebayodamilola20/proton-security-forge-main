@@ -2,18 +2,18 @@
 import img2171 from "@/assets/IMG_2172 2.jpg";
 import img2172 from "@/assets/IMG_2174 2.jpg";
 import img2174 from "@/assets/IMG_2174 2.jpg";
-import img2175 from "@/assets/IMG_2175 2.jpg";
+import img2175 from "@/assets/IMG_2175 2.jpg"
 import imag2176 from "@/assets/IMG_2176 2.jpg";
 import img2178 from "@/assets/IMG_2178 2.jpg";
 import img2179 from "@/assets/IMG_2179.jpg";
 import img2180 from "@/assets/IMG_2180.jpg";
-import img2181 from "@/assets/IMG_2181.jpg";
+import img2181 from "@/assets/IMG_2181 2.jpg";
 import img2182 from "@/assets/IMG_2182.jpg";
 import img2183 from "@/assets/IMG_2183.jpg";
 import img2185 from "@/assets/IMG_2185.jpg";
 import img2186 from "@/assets/IMG_2186.jpg";
 import img2187 from "@/assets/IMG_2187.jpg";
-import img2188 from "@/assets/IMG_2188.jpg";
+import img2188 from "@/assets/IMG_2188 2.jpg";
 import img2189 from "@/assets/IMG_2189.jpg";
 import img2190 from "@/assets/IMG_2190.jpg";
 import img2195 from "@/assets/IMG_2195.jpg";
@@ -24,6 +24,11 @@ import img2206 from "@/assets/IMG_2206.jpg";
 import img2205 from "@/assets/IMG_2205.jpg";
 import img2192 from "@/assets/IMG_2192.jpg";
 import img2193 from "@/assets/IMG_2193.jpg";
+import img2291 from "@/assets/Screenshot 2025-10-15 at 07.10.50.png";
+import img2199 from "@/assets/Screenshot 2025-10-15 at 07.11.35.png";
+import img2377 from  "@/assets/IMG_2377.jpg";
+import img2111 from "@/assets/Screenshot 2025-10-15 at 09.39.26.png";
+import img2112 from "@/assets/Screenshot 2025-10-15 at 09.50.25.png";
 
 
 
@@ -45,17 +50,17 @@ export interface Director {
 export const directors: Director[] = [
   {
     id: "john-smith",
-    name: "Olabisi familusi ",
-    title: "Director of business and sales development",
-    bio: "John Smith brings over 25 years of experience in international security operations and strategic management. He has led security transformations for Fortune 500 companies and government agencies across three continents. His expertise spans crisis management, risk assessment, and organizational security architecture.",
+    name: "Adekunmi Oluwakayode Odebunmi",
+    title: "Managing Director",
+    bio: "I began my private work experience in the fastest growing Security Risk Mitigation Organization, Halogen Security Company as an Operations Officer and later went to join a multinational Organization, General Electrics as Security Manager for the GE Aero Energy Project, at Obajana. From there I worked for a London based Risk Mitigation Company, Control Risks on a Schlumberger project in PortHarcourt as a Team Lead for the PHC Operations. ",
     achievements: [
-      "Former Director of Security Operations at Global SecureTech",
-      "Led security operations for 50+ multinational corporations",
-      "Certified Security Management Professional (CSMP)",
-      "Published author on modern security frameworks",
-      "Master's in Strategic Security Studies from Georgetown University"
+      "Former General Manager ,Physical Security & Mobility Division at Halogen Group",
+      "Over 20 years of leadership in security risk management and operations across Africa",
+      "Expert in digital transformation and security systems modernization",
+      "Executive Director (Operations & Business Development) at Arksego Nigeria Limited",
+      "Alumnus of Lagos Business School, Senior Management Program (SMP 46)"
     ],
-    images: [img2174, img2172, img2171],
+    images: [img2178, img2179, img2180],
     social: {
       tiktok: "https://tiktok.com/@johnsmith",
       instagram: "https://instagram.com/johnsmith",
@@ -64,8 +69,8 @@ export const directors: Director[] = [
   },
   {
     id: "sarah-john",
-    name: "Emmanuel Ogon",
-    title: "Manager of secured logistics department",
+    name: "Olumide Olayinka",
+    title: "Director for Admin,Finance and Quaility Control",
     bio: "Emmanuel Ogon is a renowned security training specialist with expertise in developing comprehensive security programs. With a background in military tactical training and corporate security education, she has trained over 10,000 security professionals worldwide.",
     achievements: [
       "Former Military Tactical Instructor - 15 years",
@@ -74,7 +79,7 @@ export const directors: Director[] = [
       "International Security Training Expert",
       "Ph.D. in Security Education and Training Methods"
     ],
-    images: [img2175, imag2176],
+    images: [],
     social: {
       instagram: "https://instagram.com/sarahjohnson",
       facebook: "https://facebook.com/sarahjohnson"
@@ -82,35 +87,35 @@ export const directors: Director[] = [
   },
   {
     id: "michael-chen",
-    name: "Michael Chen",
-    title: "Chief Technology Officer",
-    bio: "Michael Chen specializes in security technology integration and cybersecurity solutions. His innovative approach combines traditional security measures with cutting-edge technology to create comprehensive protection systems.",
+    name: "Olabisi Familusi",
+    title: "Director Business Development and Strategy",
+    bio: "A dynamic, results-driven, and innovative business strategist with nearly 18 years of progressive experience in Sales, Marketing, and Revenue Optimization. Recognized for driving sustainable growth, improving brand visibility, and developing high-performing teams across diverse markets and industries.",
     achievements: [
-      "15+ years in security technology development",
-      "Led implementation of AI-powered security systems",
-      "Certified Information Systems Security Professional (CISSP)",
-      "Speaker at Global Security Technology Conferences",
-      "Master's in Cybersecurity and Information Assurance"
+      "Drove 40% regional revenue growth through strategic business expansion.",
+      "Built and maintained high-value relationships with multinational clients.",
+      "Led digital transformation initiatives improving operational efficiency.",
+      "Directed cross-functional teams to exceed performance targets.",
+      "Launched new services that boosted market visibility and client retention."
     ],
-    images: [img2178, img2179, img2180],
+    images: [img2174, img2172, img2171],
     social: {
       tiktok: "https://tiktok.com/@michaelchen",
       instagram: "https://instagram.com/michaelchen"
     }
   },
   {
-    id: "amanda-williams",
-    name: "Amanda Williams",
+    id: "Kolawole Adeyeba",
+    name: "Kolawole Adeyeba",
     title: "Director of Operations",
-    bio: "Amanda Williams excels in operational efficiency and security logistics. Her strategic planning and resource management skills ensure seamless execution of security operations across multiple sectors.",
+    bio: "Kolawole Adeyeba is a seasoned security operations and business management professional with a proven track record in strategic leadership, risk mitigation, and operational excellence. He has successfully led large-scale security projects, driving performance, innovation, and client satisfaction across diverse industries.",
     achievements: [
-      "20 years in security operations management",
-      "Optimized security operations for 100+ organizations",
-      "Certified Security Operations Manager",
-      "Expert in crisis response and emergency management",
-      "MBA in Operations and Strategic Management"
+      "Over 8 years of experience in security management and operations",
+      "Spearheaded regional business growth and operational expansion across Nigeria",
+      "Expert in security digitization and modern risk management strategies",
+      "Proven leader in client relations and high-performance team development",
+      "Alumnus of Lagos Business School (Senior Management Program – SMP 46)"
     ],
-    images: [img2181, img2182, img2183],
+    images: [img2197, img2198,],
     social: {
       facebook: "https://facebook.com/amandawilliams",
       instagram: "https://instagram.com/amandawilliams"
@@ -118,8 +123,8 @@ export const directors: Director[] = [
   },
   {
     id: "david-martinez",
-    name: "David Martinez",
-    title: "Head of International Relations",
+    name: "Babatunde Ikotun",
+    title: "Finance Manager",
     bio: "David Martinez manages Proton Security's global partnerships and international security operations. His extensive network and cultural expertise facilitate security solutions across diverse international markets.",
     achievements: [
       "Former International Security Consultant",
@@ -135,8 +140,8 @@ export const directors: Director[] = [
   },
   {
     id: "jennifer-brown",
-    name: "Jennifer Brown",
-    title: "Director of Risk Assessment",
+    name: "Kayode Feilx Bamgbose",
+    title: "Operational Manager",
     bio: "Jennifer Brown leads Proton Security's risk analysis and threat assessment division. Her analytical expertise helps organizations identify vulnerabilities and implement proactive security measures.",
     achievements: [
       "18 years in security risk management",
@@ -145,8 +150,7 @@ export const directors: Director[] = [
       "Published researcher on security threat analysis",
       "Ph.D. in Risk Management and Security Analytics"
     ],
-    images: [img2188, img2189,
-       img2190,
+    images: [img2192, img2193
     ],
     social: {
       instagram: "https://instagram.com/jenniferbrown",
@@ -172,17 +176,17 @@ export const directors: Director[] = [
   },
   {
     id: "lisa-anderson",
-    name: "Kolawole Adeyeba",
+    name: "Gloria Okezie",
     title: "General Maneger of Operations",
     bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
     achievements: [
-      "15+ years in client relationship management",
+      "15+ years in client Sales lead management",
       "Achieved 98% client retention rate",
       "Expert in custom security solutions",
       "Award-winning customer service leader",
       "MBA in Business Administration and Client Management"
     ],
-    images: [img2197, img2198],
+    images: [img2377, img2199],
     social: {
       instagram: "https://instagram.com/lisaanderson",
       tiktok: "https://tiktok.com/@lisaanderson"
@@ -190,7 +194,7 @@ export const directors: Director[] = [
   },
   {
     id: "MR ADEBAYO DAMILOAL",
-    name: "ADEBAYODAMILOLA",
+    name: "Idowu Ajagunna",
     title: "General Maneger of Operations",
     bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
     achievements: [
@@ -207,9 +211,9 @@ export const directors: Director[] = [
     }
   },
   {
-    id: "MR ADEBAYO DAMILOAL",
-    name: "ADEBAYODAMILOLA",
-    title: "General Maneger of Operations",
+    id: "mr ogon",
+    name: "Emmanuel Ogon",
+    title: "Head GIG Logistics",
     bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
     achievements: [
       "15+ years in client relationship management",
@@ -218,10 +222,29 @@ export const directors: Director[] = [
       "Award-winning customer service leader",
       "MBA in Business Administration and Client Management"
     ],
-    images: [img2192, img2193],
+    images: [img2175, imag2176],
     social: {
       instagram: "https://instagram.com/lisaanderson",
       tiktok: "https://tiktok.com/@lisaanderson"
     }
-  }
+  },
+   {
+    id: "mr teslim",
+    name: "TESLIM OKUNOLA",
+    title: "Head of Technical",
+    bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
+    achievements: [
+      "15+ years in client relationship management",
+      "Achieved 98% client retention rate",
+      "Expert in custom security solutions",
+      "Award-winning customer service leader",
+      "MBA in Business Administration and Client Management"
+    ],
+    images: [img2111, img2112],
+    social: {
+      instagram: "https://instagram.com/lisaanderson",
+      tiktok: "https://tiktok.com/@lisaanderson"
+    }
+  },
+  
 ];

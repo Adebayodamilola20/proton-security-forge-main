@@ -64,9 +64,9 @@ const Gallery = () => {
           {/* Note about replacement */}
           <AnimatedSection delay={500}>
             <div className="mt-12 bg-highlight/10 border-l-4 border-highlight p-6 rounded-r-lg">
-              <p className="text-primary font-semibold mb-2">📸 REPLACE GALLERY IMAGES HERE</p>
+              <p className="text-primary font-semibold mb-2">📸All Images is update here </p>
               <p className="text-gray-600 text-sm">
-                Update the gallery images in <code className="bg-primary/10 px-2 py-1 rounded">src/data/gallery.ts</code> with your actual photos from operations, training sessions, and events.
+                 <code className="bg-primary/10 px-2 py-1 rounded"></code> With actual  photos from operations, training sessions, and events.
               </p>
             </div>
           </AnimatedSection>

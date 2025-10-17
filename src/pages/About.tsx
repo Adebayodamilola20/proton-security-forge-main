@@ -2,6 +2,7 @@ import { Shield, Target, Eye, Heart, Globe, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedSection from "@/components/AnimatedSection";
 import boardImage from "@/assets/board-meeting.jpg";
+import img333 from "@/assets/IMG_2174 2.jpg";
 
 const About = () => {
   const values = [
@@ -82,20 +83,21 @@ const About = () => {
               <div>
                 <h2 className="text-4xl font-bold text-primary mb-6">Our Story</h2>
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                  Founded in 1998, Proton Security emerged from a vision to revolutionize the security industry by combining military-grade training with cutting-edge technology and innovative security solutions.
+                Proton Security Services Ltd was established in 2003 in Lagos, Nigeria. From the beginning, our goal has been to raise the bar for professional security by combining highly trained personnel, rigorous standards, and modern technology.
+               
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Over the past 25 years, we've grown from a small team of dedicated professionals to an international security powerhouse, serving clients across 40+ countries and training over 10,000 security professionals.
+                Over the years, we have expanded our footprint to all 36 states of Nigeria, growing our team to hundreds of professionals whose dedication and discipline define our reputation.
                 </p>
                 <p className="text-gray-600">
-                  Our success is built on the foundation of excellence, integrity, and an unwavering commitment to our clients' security needs. Today, we continue to set industry standards and push the boundaries of what's possible in security solutions.
+                Along the way, we’ve earned national recognition, including SON ISO 9001 certifications, as continuous proof of our adherence to quality management, client satisfaction, and operational excellence.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
               <img
-                src={boardImage}
+                src = {img333}
                 alt="Proton Security Team"
                 className="rounded-lg shadow-2xl"
               />

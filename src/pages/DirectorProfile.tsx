@@ -24,6 +24,14 @@ const DirectorProfile = () => {
     return () => clearInterval(interval);
   }, [director]);
 
+  // Scroll to top on component mount (route change) - ensures page starts at the top (picture visible)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
   if (!director) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -52,7 +60,7 @@ const DirectorProfile = () => {
       </div>
 
       {/* Profile Content */}
-      <section className="section-padding">
+      <section className="section-padding py-5 ">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left: Image Slideshow */}

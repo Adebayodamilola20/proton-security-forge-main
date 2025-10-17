@@ -16,6 +16,7 @@ import img15 from "@/assets/IMG_2245.jpg";
 import img16 from "@/assets/IMG_2247.jpg";
 import img17 from "@/assets/IMG_2251.jpg";
 import img18 from "@/assets/IMG_2250.jpg";
+import img19 from "@/assets/IMG_2211 2.jpg";
 export interface GalleryItem {
   id: string;
   url: string;  // This will now be your local image import (string URL)
@@ -26,7 +27,7 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "1",
-    url: img2,  // Local: IMG_2172 2.jpg
+    url: img19,  // Local: IMG_2172 2.jpg
     title: "Security Training Exercise",
     category: "Training",
   },
