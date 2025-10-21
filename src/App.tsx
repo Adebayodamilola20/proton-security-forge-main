@@ -13,6 +13,9 @@ import DirectorProfile from "./pages/DirectorProfile";
 import Gallery from "./pages/Gallery";
 import Clients from "./pages/Clients";
 import Contact from "./pages/Contact";
+import Ourblog from "./pages/Ourblog";
+import PolicyStatement from "./pages/PolicyStatement";
+import BlogPost from "./pages/BlogPost"; // Add this import
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +38,9 @@ const App = () => (
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
           <Route path="/clients" element={<Layout><Clients /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/blog" element={<Layout><Ourblog /></Layout>} />
+          <Route path="/blog/:id" element={<Layout><BlogPost /></Layout>} />
+          <Route path="/policy" element={<Layout><PolicyStatement /></Layout>} />
           
           {/* Login without layout */}
           <Route path="/login" element={<Login />} />

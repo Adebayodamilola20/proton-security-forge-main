@@ -5,9 +5,10 @@ import AnimatedSection from "@/components/AnimatedSection";
 const Board = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/*Hero section */}
       <section className="relative py-24 bg-gradient-to-r from-primary via-accent to-primary text-white">
         <div className="container-custom px-4">
+          
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-5xl font-bold mb-6">Board of Directors</h1>
