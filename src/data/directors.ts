@@ -29,8 +29,7 @@ import img2199 from "@/assets/Screenshot 2025-10-15 at 07.11.35.png";
 import img2377 from  "@/assets/IMG_2377.jpg";
 import img2111 from "@/assets/Screenshot 2025-10-15 at 09.39.26.png";
 import img2112 from "@/assets/Screenshot 2025-10-15 at 09.50.25.png";
-
-
+import img3322 from "@/assets/Screenshot 2025-10-21 at 11.43.16.png";
 
 
 export interface Director {
@@ -71,15 +70,15 @@ export const directors: Director[] = [
     id: "sarah-john",
     name: "Olumide Olayinka",
     title: "Director for Admin,Finance and Quaility Control",
-    bio: "Emmanuel Ogon is a renowned security training specialist with expertise in developing comprehensive security programs. With a background in military tactical training and corporate security education, she has trained over 10,000 security professionals worldwide.",
+    bio: "Dr. Olumide Olayinka is a distinguished legal practitioner with over 32 years of extensive experience in the legal profession. A graduate of the University of Lagos, he was called to the Nigerian Bar in 1992. He further advanced his academic pursuit by obtaining a Ph.D. in Law from Leeds Beckett University, United Kingdom.",
     achievements: [
-      "Former Military Tactical Instructor - 15 years",
-      "Developed award-winning security training curriculum",
-      "Certified Protection Professional (CPP)",
-      "International Security Training Expert",
-      "Ph.D. in Security Education and Training Methods"
+      "Partner at Cannan Solicitors, Lagos",
+      "Former General Counsel, Troyka Group, Lagos",
+      "Over 32 years of legal and corporate governance experience",
+      "Ph.D. holder in Law from Leeds Beckett University, UK",
+      "Facilitator at the University of Lagos Business School"
     ],
-    images: [],
+    images: [img3322],
     social: {
       instagram: "https://instagram.com/sarahjohnson",
       facebook: "https://facebook.com/sarahjohnson"

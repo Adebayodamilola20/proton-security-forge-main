@@ -273,13 +273,13 @@ const Layout = ({ children }) => {
                 Premier security solutions and training provider committed to excellence and protection.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-highlight transition-colors">
+                <a href="https://www.facebook.com/protonsecurityservices" className="hover:text-highlight transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="hover:text-highlight transition-colors">
+                <a href="https://www.instagram.com/protonsecurityservices/" className="hover:text-highlight transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="hover:text-highlight transition-colors">
+                <a href="https://x.com/protonsecurity?s=21" className="hover:text-highlight transition-colors">
                   <Twitter size={20} />
                 </a>
               </div>
