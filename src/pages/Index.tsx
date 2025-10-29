@@ -263,7 +263,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
             </AnimatedSection>
             <AnimatedSection delay={100}>
               <div>
-                <div className="text-5xl font-bold text-highlight mb-2">5k+</div>
+                <div className="text-5xl font-bold text-highlight mb-2">12k+</div>
                 <div className="text-lg">Trained Professionals</div>
               </div>
             </AnimatedSection>
@@ -689,14 +689,14 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
 
       {/* Chat Box */}
       {isChatOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-full max-w-[calc(100vw-48px)] md:max-w-md h-[420px] md:h-[500px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl flex flex-col">
+        <div className="fixed bottom-24 right-6 z-50 w-full max-w-[calc(100vw-48px)] md:max-w-md h-[420px] md:h-[500px] bg-primary border border-primary/30 rounded-2xl shadow-2xl flex flex-col">
           {/* Chat Header */}
-          <div className="bg-white/5 backdrop-blur-sm border-b border-white/10 p-4 rounded-t-2xl flex justify-between items-center">
+          <div className="bg-primary border-b border-white/10 p-4 rounded-t-2xl flex justify-between items-center">
             <h3 className="font-semibold text-white">Proton Security AI</h3>
             <div className="flex gap-2">
               <button
                 onClick={clearChat}
-                className="text-white/80 hover:text-red-500 transition-colors p-1"
+                className="text-white/80 hover:text-red-400 transition-colors p-1"
                 title="Clear Chat History"
               >
                 <Trash2 size={20} />
@@ -712,7 +712,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
           </div>
 
           {/* Messages Area */}
-          <div ref={chatMessagesRef} className="flex-1 p-4 overflow-y-auto space-y-4 bg-white/5">
+          <div ref={chatMessagesRef} className="flex-1 p-4 overflow-y-auto space-y-4 bg-primary">
             {messages.length === 0 ? (
               <p className="text-white/70 text-center italic text-sm">Ask me anything about our security services, training, or solutions!</p>
             ) : (
@@ -724,8 +724,8 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                   <div
                     className={`max-w-[75%] rounded-2xl px-4 py-2 ${
                       message.sender === "user"
-                        ? "bg-gradient-to-r from-primary to-accent text-white"
-                        : "bg-white/20 backdrop-blur-md text-white border border-white/20"
+                        ? "bg-accent text-white"
+                        : "bg-white/90 text-primary"
                     }`}
                   >
                     <p className="text-sm whitespace-pre-wrap">{message.text}</p>
@@ -736,11 +736,11 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
             {/* Loading Spinner */}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white/20 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-2">
+                <div className="bg-white/90 rounded-2xl px-4 py-2">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></div>
-                    <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></div>
-                    <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></div>
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></div>
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></div>
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></div>
                   </div>
                 </div>
               </div>
@@ -748,7 +748,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
           </div>
 
           {/* Input Area */}
-          <div className="p-4 bg-white/5 backdrop-blur-sm border-t border-white/10 rounded-b-2xl">
+          <div className="p-4 bg-primary border-t border-white/10 rounded-b-2xl">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -756,13 +756,13 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={isThrottled ? "Please wait..." : "Type your message..."}
-                className="flex-1 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/50 rounded-full focus:outline-none focus:ring-2 focus:ring-accent/50"
+                className="flex-1 px-4 py-2 bg-white/90 text-primary placeholder-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-accent"
                 disabled={isLoading || isThrottled}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={isLoading || !inputValue.trim() || isThrottled}
-                className="bg-gradient-to-r from-primary to-accent text-white p-3 rounded-full hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity flex items-center justify-center"
+                className="bg-accent text-white p-3 rounded-full hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity flex items-center justify-center"
                 title={isThrottled ? "Waiting for request cooldown" : "Send Message"}
               >
                 {isLoading ? (
