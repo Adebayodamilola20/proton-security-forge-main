@@ -148,22 +148,26 @@ const DirectorProfile = () => {
               </Card>
 
               {/* Achievements */}
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <Award className="text-accent" size={32} />
-                    <h2 className="text-2xl font-bold text-primary">Key Achievements</h2>
-                  </div>
-                  <ul className="space-y-4">
-                    {director.achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start space-x-3 p-3 bg-muted rounded-lg hover:bg-accent/10 transition-colors">
-                        <div className="w-2 h-2 bg-highlight rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+             
+            {/* Achievements */}
+            {director.id !== "sarah-john" && (
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <Award className="text-accent" size={32} />
+                      <h2 className="text-2xl font-bold text-primary">Key Achievements</h2>
+                    </div>
+                    <ul className="space-y-4">
+                      {director.achievements.map((achievement, index) => (
+                        <li key={index} className="flex items-start space-x-3 p-3 bg-muted rounded-lg hover:bg-accent/10 transition-colors">
+                          <div className="w-2 h-2 bg-highlight rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
         </div>

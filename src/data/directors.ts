@@ -30,6 +30,7 @@ import img2377 from  "@/assets/IMG_2377.jpg";
 import img2111 from "@/assets/Screenshot 2025-10-15 at 09.39.26.png";
 import img2112 from "@/assets/Screenshot 2025-10-15 at 09.50.25.png";
 import img3322 from "@/assets/Screenshot 2025-10-21 at 11.43.16.png";
+import img3303 from "@/assets/amoug.jpg";
 
 
 export interface Director {
@@ -70,15 +71,10 @@ export const directors: Director[] = [
     id: "sarah-john",
     name: "Olumide Olayinka",
     title: "Director for Admin,Finance and Quaility Control",
-    bio: "Dr. Olumide Olayinka is a distinguished legal practitioner with over 32 years of extensive experience in the legal profession. A graduate of the University of Lagos, he was called to the Nigerian Bar in 1992. He further advanced his academic pursuit by obtaining a Ph.D. in Law from Leeds Beckett University, United Kingdom.",
+    bio: "Dr. Olumide Olayinka is a seasoned legal practitioner with over thirty-two years of experience, having been called to the Nigerian Bar in 1992. A graduate of the Ogun State University, he obtained both the Master of Industrial and Labour Relations (MILR) and Master of Laws (LLM) degrees from the University of Lagos. Further, he earned a PhD in Law from the Leeds Beckett University, Leeds, United Kingdom. He was at various times, inter alia, Senior State Counsel in the Ministry of Justice, Ogun State; as well as General Counsel, at the Troyka Group in Lagos State.",
     achievements: [
-      "Partner at Cannan Solicitors, Lagos",
-      "Former General Counsel, Troyka Group, Lagos",
-      "Over 32 years of legal and corporate governance experience",
-      "Ph.D. holder in Law from Leeds Beckett University, UK",
-      "Facilitator at the University of Lagos Business School"
     ],
-    images: [img3322],
+    images: [img3303],
     social: {
       instagram: "https://instagram.com/sarahjohnson",
       facebook: "https://facebook.com/sarahjohnson"
