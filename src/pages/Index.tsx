@@ -12,7 +12,7 @@ import trainingImage from "@/assets/IMG_2208.jpg";
 
 // WARNING: SECURITY RISK! This key should NEVER be hardcoded in production client-side code.
 // Please move this API key to a secure backend environment variable and use a proxy server.
-const API_KEY = "b71a861324284e6a803e294253a09ba6"; 
+const API_KEY = "b71a861324284e6a803e294253a09ba6";
 
 // Define the bounce animation keyframes for the chat button
 const BOUNCE_ANIMATION_STYLE = `
@@ -36,14 +36,14 @@ const Index = () => {
   const featuredDirectors = directors
     .filter(d => d.images && d.images.length > 0)
     .slice(0, 3);
-  
+
   const chatMessagesRef = useRef(null);
 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isBouncing, setIsBouncing] = useState(false); 
+  const [isBouncing, setIsBouncing] = useState(false);
   const [isThrottled, setIsThrottled] = useState(false);
 
   // Function to handle automatic scroll
@@ -61,61 +61,61 @@ const Index = () => {
     setIsBouncing(true);
 
     const initialStopTimer = setTimeout(() => {
-        setIsBouncing(false);
-    }, 5000); 
+      setIsBouncing(false);
+    }, 5000);
 
     const intervalId = setInterval(() => {
-        setIsBouncing(true);
+      setIsBouncing(true);
 
-        const innerStopTimer = setTimeout(() => {
-            setIsBouncing(false);
-        }, 5000); 
+      const innerStopTimer = setTimeout(() => {
+        setIsBouncing(false);
+      }, 5000);
 
-        return () => clearTimeout(innerStopTimer);
-    }, 9000); 
+      return () => clearTimeout(innerStopTimer);
+    }, 9000);
 
     return () => {
-        clearTimeout(initialStopTimer);
-        clearInterval(intervalId);
+      clearTimeout(initialStopTimer);
+      clearInterval(intervalId);
     };
-  }, []); 
-  
+  }, []);
+
   // Function to clear the messages
   const clearChat = () => {
-      setMessages([]);
-      setInputValue("");
-      const initialMessage = {
-          id: 1,
-          text: "Hello! I'm the Proton Security AI assistant. How can I help you with our services or training today?",
-          sender: "ai",
-      };
-      setMessages([initialMessage]);
+    setMessages([]);
+    setInputValue("");
+    const initialMessage = {
+      id: 1,
+      text: "Hello! I'm the Proton Security AI assistant. How can I help you with our services or training today?",
+      sender: "ai",
+    };
+    setMessages([initialMessage]);
   };
-  
+
   // Initialize chat with a welcome message on mount
   useEffect(() => {
-      if (messages.length === 0) {
-          clearChat();
-      }
+    if (messages.length === 0) {
+      clearChat();
+    }
   }, []);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading || isThrottled) return;
 
     const userMessage = { id: Date.now(), text: inputValue, sender: "user" };
-    setMessages((prev) => [...prev, userMessage]); 
+    setMessages((prev) => [...prev, userMessage]);
     const userInput = inputValue;
     setInputValue("");
     setIsLoading(true);
     setIsThrottled(true);
 
     setTimeout(() => {
-        setIsThrottled(false);
+      setIsThrottled(false);
     }, 3000);
 
     try {
       let conversationContext = "";
-      
+
       messages.slice(1).forEach((msg) => {
         if (msg.sender === "user") {
           conversationContext += `User: ${msg.text}\n`;
@@ -123,7 +123,7 @@ const Index = () => {
           conversationContext += `Assistant: ${msg.text}\n`;
         }
       });
-      
+
       conversationContext += `User: ${userInput}\nAssistant:`;
 
       const response = await fetch("https://gateway.pixazo.ai/llama-2/v1/getData", {
@@ -159,11 +159,11 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
       }
 
       const data = await response.json();
-      const aiText = data.choices?.[0]?.text || 
-                     data.generated_text || 
-                     data.response || 
-                     data.content || 
-                     "I couldn't generate a response. The API returned a success status but no text. Please try again.";
+      const aiText = data.choices?.[0]?.text ||
+        data.generated_text ||
+        data.response ||
+        data.content ||
+        "I couldn't generate a response. The API returned a success status but no text. Please try again.";
 
       const aiResponse = {
         id: Date.now() + 1,
@@ -173,21 +173,21 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
       setMessages((prev) => [...prev, aiResponse]);
     } catch (error) {
       console.error("Error calling Pixazo.ai Llama-2 API:", error);
-      
+
       let errorMessage = "Sorry, there was an error processing your request. Please try again.";
 
       if (error.message.includes("API error: 429")) {
-          errorMessage = "🚨 **Rate Limit Exceeded (Error 429)**: You've sent too many requests too quickly. Please wait a moment and try again, or **click the trash icon to clear the chat** and try a shorter query.";
+        errorMessage = "🚨 **Rate Limit Exceeded (Error 429)**: You've sent too many requests too quickly. Please wait a moment and try again, or **click the trash icon to clear the chat** and try a shorter query.";
       } else if (error.message.includes("API error: 401") || error.message.includes("API error: 403")) {
-          errorMessage = "🚨 Error: API Key is unauthorized or invalid. Please check your Pixazo.ai subscription key and billing.";
+        errorMessage = "🚨 Error: API Key is unauthorized or invalid. Please check your Pixazo.ai subscription key and billing.";
       } else if (error.message.includes("API error: 400")) {
-          errorMessage = "⚠️ Error: Bad Request. The request or conversation history is likely too long. **Click the trash icon to clear the chat** and try a shorter message.";
+        errorMessage = "⚠️ Error: Bad Request. The request or conversation history is likely too long. **Click the trash icon to clear the chat** and try a shorter message.";
       } else if (error.message.includes("API error: 5")) {
-          errorMessage = `💥 Server Error: The Pixazo.ai server is experiencing an issue. Please try again shortly.`;
+        errorMessage = `💥 Server Error: The Pixazo.ai server is experiencing an issue. Please try again shortly.`;
       } else if (error.message.includes("Failed to fetch")) {
-          errorMessage = "🔌 Connection Error: Failed to connect to the Pixazo.ai server. Check your network.";
-      } else { 
-          errorMessage = `❌ Unexpected Error: ${error.message}. Please check the browser console for details.`;
+        errorMessage = "🔌 Connection Error: Failed to connect to the Pixazo.ai server. Check your network.";
+      } else {
+        errorMessage = `❌ Unexpected Error: ${error.message}. Please check the browser console for details.`;
       }
 
       const errorResponse = {
@@ -214,7 +214,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
 
   return (
     <div className="min-h-screen">
-      
+
       <style>{BOUNCE_ANIMATION_STYLE}</style>
 
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
@@ -223,10 +223,11 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
             src={heroImage}
             alt="Proton Security Hero"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/50 to-primary/70"></div>
         </div>
-        
+
         <div className="relative z-10 container-custom px-4 text-white text-center">
           <AnimatedSection>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -397,6 +398,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                 src={trainingImage}
                 alt="Security Training"
                 className="rounded-lg shadow-2xl"
+                loading="lazy"
               />
             </AnimatedSection>
 
@@ -675,13 +677,12 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
       {/* Chat Toggle Button */}
       <button
         onClick={toggleChat}
-        className={`fixed bottom-6 right-6 z-50 bg-gradient-to-r from-primary to-accent text-white p-4 rounded-full shadow-lg transition-transform duration-200 ${
-          isChatOpen 
-            ? "scale-100" 
-            : (isBouncing 
-                ? "intermittent-bounce" 
-                : "hover:scale-110") 
-        }`}
+        className={`fixed bottom-6 right-6 z-50 bg-gradient-to-r from-primary to-accent text-white p-4 rounded-full shadow-lg transition-transform duration-200 ${isChatOpen
+          ? "scale-100"
+          : (isBouncing
+            ? "intermittent-bounce"
+            : "hover:scale-110")
+          }`}
         aria-label="Open Chat"
       >
         <MessageCircle size={24} />
@@ -722,11 +723,10 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                   className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[75%] rounded-2xl px-4 py-2 ${
-                      message.sender === "user"
-                        ? "bg-accent text-white"
-                        : "bg-white/90 text-primary"
-                    }`}
+                    className={`max-w-[75%] rounded-2xl px-4 py-2 ${message.sender === "user"
+                      ? "bg-accent text-white"
+                      : "bg-white/90 text-primary"
+                      }`}
                   >
                     <p className="text-sm whitespace-pre-wrap">{message.text}</p>
                   </div>

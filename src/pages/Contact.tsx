@@ -28,7 +28,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // EmailJS Credentials
       const SERVICE_ID = 'service_bx69i3r';
@@ -114,8 +114,8 @@ const Contact = () => {
                     <Phone className="text-accent" size={28} />
                   </div>
                   <h3 className="font-bold text-primary mb-2">Phone</h3>
-                  <p className="text-sm text-gray-600">+234 8172005516</p>
-                  <p className="text-sm text-gray-600">+234 8032023600</p>
+                  <p className="text-sm text-gray-600">08032023600</p>
+                  <p className="text-sm text-gray-600">07032027481</p>
                 </CardContent>
               </Card>
             </AnimatedSection>
@@ -235,9 +235,9 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="btn-highlight w-full"
                       disabled={isSubmitting}
                     >
@@ -261,7 +261,7 @@ const Contact = () => {
                 <CardContent className="p-0 h-full min-h-[600px]">
                   <div className="w-full h-full relative">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.3636!3d6.5134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae2b6f5e9%3A0x3e27b3e2b3e2b3e2!2s10%20Jibowu%20St%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng&markers=color:red%7Clabel:P%7C6.5134,3.3636"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0824!2d3.3736!3d6.5134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d65a!2sJibowu%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1733674000000!5m2!1sen!2sng"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}

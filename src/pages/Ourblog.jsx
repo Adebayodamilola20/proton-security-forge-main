@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import img4 from "@/assets/IMG_2251.jpg";
+import imag64 from "@/assets/new cast.png";
 
 const Ourblog = () => {
   const [visibleItems, setVisibleItems] = useState([]);
@@ -47,7 +48,7 @@ const Ourblog = () => {
       title: "Why Proton Security is the Top Choice for Your Event Security",
       date: "October 10, 2025",
       excerpt: "Are you planning an event that needs rock-solid security? Whether you're hosting a corporate conference in Lagos, a lavish wedding in Abuja...",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
+      image: imag64
     },
     {
       id: 3,
