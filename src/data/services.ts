@@ -48,19 +48,7 @@ export const services: Service[] = [
       "Mobile Patrol Services"
     ]
   },
-  {
-    id: "cybersecurity",
-    title: "Cybersecurity Solutions",
-    description: "Advanced digital security measures to protect your organization from cyber threats and data breaches.",
-    icon: Lock,
-    features: [
-      "Network Security Audits",
-      "Penetration Testing",
-      "Security System Integration",
-      "Incident Response",
-      "Security Awareness Training"
-    ]
-  },
+ 
   {
     id: "surveillance",
     title: "Surveillance & Monitoring",

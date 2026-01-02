@@ -1,0 +1,36 @@
+import { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+
+interface StaggeredTextProps {
+  children: React.ReactNode; 
+  className?: string;
+  delay?: number;
+  staggerDelay?: number;
+}
+
+// We'll use framer-motion here if available, or just CSS if I don't want to install a big dep.
+// But wait, the user didn't say I can install things. I should check package.json first.
+// If framer-motion isn't there, I'll use CSS keyframes with dynamic delays.
+
+// Let's stick to pure React/CSS to be safe and lightweight unless I see framer-motion.
+// I'll check package.json. For now, I'll write a CSS-based one.
+
+const StaggeredText = ({ children, className = "", delay = 0, staggerDelay = 0.15 }: StaggeredTextProps) => {
+  // If children is a string, split by lines or words? User said "line by line".
+  // But usually we pass elements. Let's assume we pass text and split it by <br/> or newlines?
+  // Or simpler: The user passes separate elements.
+  
+  // Re-reading: "the way the letters. line. by. line all came in".
+  // Let's make a wrapper that takes a string OR array of strings and animates them.
+  
+  // Let's implement a component that splits text into lines.
+  
+  return (
+    <div className={`${className} staggered-wrapper`}>
+      {/* We need to implement this in the parent usage actually for better control, 
+          or simpler: just keyframes with index * delay. 
+          Let's make a component that accepts a list of strings (lines).
+      */}
+    </div>
+  );
+};

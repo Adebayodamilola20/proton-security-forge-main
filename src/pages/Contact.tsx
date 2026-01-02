@@ -18,11 +18,11 @@ const Contact = () => {
     message: ""
   });
 
-  // Initialize EmailJS once on component mount (Uses your Public Key for auth)
+  
   useEffect(() => {
-    const PUBLIC_KEY = 'iGFdyWHL16gdFMaSO';  // Your EmailJS Public Key
+    const PUBLIC_KEY = 'iGFdyWHL16gdFMaSO';  
     emailjs.init(PUBLIC_KEY);
-    console.log("EmailJS Initialized with Public Key:", PUBLIC_KEY);  // Debug log
+    console.log("EmailJS Initialized with Public Key:", PUBLIC_KEY);  
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +34,7 @@ const Contact = () => {
       const SERVICE_ID = 'service_bx69i3r';
       const TEMPLATE_ID = 'vergo_damilola2007';
 
-      console.log("Sending email with data:", formData);  // Debug: Log form data
+      console.log("Sending email with data:", formData);  
       console.log("Using Service ID:", SERVICE_ID, "Template ID:", TEMPLATE_ID);  // Debug: Verify IDs
 
       // Send email using EmailJS (Fixed: Simplified params; to_email set in dashboard)
@@ -49,7 +49,7 @@ const Contact = () => {
         }
       );
 
-      console.log("EmailJS Send Result:", result);  // Debug: Success response (status: 200)
+      console.log("EmailJS Send Result:", result);  
 
       toast({
         title: "Message Sent Successfully!",

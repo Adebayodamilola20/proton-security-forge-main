@@ -28,11 +28,7 @@ const Training = () => {
   ];
 
   const specializedModules = [
-    {
-      icon: Shield,
-      title: "Cybersecurity Fundamentals",
-      description: "Understanding digital threats and security protocols"
-    },
+  
     {
       icon: Target,
       title: "Counter-Terrorism Training",

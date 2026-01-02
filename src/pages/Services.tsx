@@ -60,7 +60,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Clients Section - Moved to First Position After Services Grid */}
       <section className="py-12 bg-background border-t border-gray-200">  {/* Straight line divider */}
         <div className="container-custom">
           <AnimatedSection delay={0}>

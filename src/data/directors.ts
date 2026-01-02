@@ -26,12 +26,12 @@ import img2192 from "@/assets/IMG_2192.jpg";
 import img2193 from "@/assets/IMG_2193.jpg";
 import img2291 from "@/assets/Screenshot 2025-10-15 at 07.10.50.png";
 import img2199 from "@/assets/Screenshot 2025-10-15 at 07.11.35.png";
-import img2377 from  "@/assets/IMG_2377.jpg";
+import img2377 from "@/assets/IMG_2377.jpg";
 import img2111 from "@/assets/Screenshot 2025-10-15 at 09.39.26.png";
 import img2112 from "@/assets/Screenshot 2025-10-15 at 09.50.25.png";
 import img3322 from "@/assets/Screenshot 2025-10-21 at 11.43.16.png";
 import img3303 from "@/assets/amoug.jpg";
-
+import img4555 from "@/assets/new.png";
 
 export interface Director {
   id: string;
@@ -50,9 +50,9 @@ export interface Director {
 export const directors: Director[] = [
   {
     id: "john-smith",
-    name: "Adekunmi Oluwakayode Odebunmi",
+    name: "Prince Adekunmi Odebunmi",
     title: "Managing Director",
-    bio: "I began my private work experience in the fastest growing Security Risk Mitigation Organization, Halogen Security Company as an Operations Officer and later went to join a multinational Organization, General Electrics as Security Manager for the GE Aero Energy Project, at Obajana. From there I worked for a London based Risk Mitigation Company, Control Risks on a Schlumberger project in PortHarcourt as a Team Lead for the PHC Operations. ",
+    bio: "He is a seasoned professional with an extensive career spanning the public and private sectors, marked by excellence, integrity, and impact He commenced his professional journey in 1996 with a distinguished enlistment into the Nigerian Air Force, where he served honorably for a decade. During his meritorious service, he participated in several national campaigns, earning recognition for his dedication and commitment to the nation. Upon his transition to the private sector, Prince Odebunmi began his career with in an Enterprise Security Risks Solutions Organization as an Operations Officer. His outstanding performance soon propelled him into greater responsibilities, leading him to join General Electrics as Security Manager for the General Electric Aero Energy Project in Obajana, Kogi State. Subsequently, he worked with Control Risks, a London-based Risk Mitigation firm, as Team Lead for Security Operations on a Schlumberger project in Port Harcourt. In 2010, he came back to the Halogen Group as Regional Manager for the South-South and South-East regions, where he spearheaded significant business growth, strengthened operational stability, and positioned the company ahead of competition in those regions. His success led to his appointment as Head of Lagos and Western Regional Business Operations, where he further distinguished himself in business growth, client satisfaction, and operational excellence. Prince Odebunmi played a pivotal role in driving the digitization program of Halogen Group’s Physical Security and Mobility Division. His exceptional contributions and leadership capacity earned him steady career advancement, culminating in his appointment as General Manager of Halogen Group.",
     achievements: [
       "Former General Manager ,Physical Security & Mobility Division at Halogen Group",
       "Over 20 years of leadership in security risk management and operations across Africa",
@@ -60,7 +60,7 @@ export const directors: Director[] = [
       "Executive Director (Operations & Business Development) at Arksego Nigeria Limited",
       "Alumnus of Lagos Business School, Senior Management Program (SMP 46)"
     ],
-    images: [img2178, img2179, img2180],
+    images: [img4555, img2179, img2180],
     social: {
       tiktok: "https://tiktok.com/@johnsmith",
       instagram: "https://instagram.com/johnsmith",
@@ -99,44 +99,9 @@ export const directors: Director[] = [
     }
   },
   {
-    id: "Kolawole Adeyeba",
-    name: "Kolawole Adeyeba",
-    title: "Director of Operations",
-    bio: "Kolawole Adeyeba is a seasoned security operations and business management professional with a proven track record in strategic leadership, risk mitigation, and operational excellence. He has successfully led large-scale security projects, driving performance, innovation, and client satisfaction across diverse industries.",
-    achievements: [
-      "Over 8 years of experience in security management and operations",
-      "Spearheaded regional business growth and operational expansion across Nigeria",
-      "Expert in security digitization and modern risk management strategies",
-      "Proven leader in client relations and high-performance team development",
-      "Alumnus of Lagos Business School (Senior Management Program – SMP 46)"
-    ],
-    images: [img2197, img2198,],
-    social: {
-      facebook: "https://facebook.com/amandawilliams",
-      instagram: "https://instagram.com/amandawilliams"
-    }
-  },
-  {
-    id: "david-martinez",
-    name: "Babatunde Ikotun",
-    title: "Finance Manager",
-    bio: "David Martinez manages Proton Security's global partnerships and international security operations. His extensive network and cultural expertise facilitate security solutions across diverse international markets.",
-    achievements: [
-      "Former International Security Consultant",
-      "Established partnerships in 40+ countries",
-      "Fluent in 5 languages",
-      "Expert in international security protocols",
-      "Master's in International Relations and Security Studies"
-    ],
-    images: [img2185, img2186, img2187],
-    social: {
-      tiktok: "https://tiktok.com/@davidmartinez"
-    }
-  },
-  {
     id: "jennifer-brown",
     name: "Kayode Feilx Bamgbose",
-    title: "Operational Manager",
+    title: "Operational Manager La",
     bio: "Jennifer Brown leads Proton Security's risk analysis and threat assessment division. Her analytical expertise helps organizations identify vulnerabilities and implement proactive security measures.",
     achievements: [
       "18 years in security risk management",
@@ -152,94 +117,6 @@ export const directors: Director[] = [
       facebook: "https://facebook.com/jenniferbrown"
     }
   },
-  {
-    id: "robert-garcia",
-    name: "John Chinwendu",
-    title: "Head of training",
-    bio: "Robert Garcia provides expert consultation on complex security challenges. His hands-on experience in both public and private sector security makes him a trusted advisor for high-stakes security operations.",
-    achievements: [
-      "Former Federal Security Agent - 12 years",
-      "Security consultant for major corporations and governments",
-      "Specialist in executive protection and VIP security",
-      "Certified Protection Professional (CPP)",
-      "Master's in Criminal Justice and Security Management"
-    ],
-    images: [img2195, img2196,],
-    social: {
-      facebook: "https://facebook.com/robertgarcia"
-    }
-  },
-  {
-    id: "lisa-anderson",
-    name: "Gloria Okezie",
-    title: "General Maneger of Operations",
-    bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
-    achievements: [
-      "15+ years in client Sales lead management",
-      "Achieved 98% client retention rate",
-      "Expert in custom security solutions",
-      "Award-winning customer service leader",
-      "MBA in Business Administration and Client Management"
-    ],
-    images: [img2377, img2199],
-    social: {
-      instagram: "https://instagram.com/lisaanderson",
-      tiktok: "https://tiktok.com/@lisaanderson"
-    }
-  },
-  {
-    id: "MR ADEBAYO DAMILOAL",
-    name: "Idowu Ajagunna",
-    title: "General Maneger of Operations",
-    bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
-    achievements: [
-      "15+ years in client relationship management",
-      "Achieved 98% client retention rate",
-      "Expert in custom security solutions",
-      "Award-winning customer service leader",
-      "MBA in Business Administration and Client Management"
-    ],
-    images: [img2205, img2206],
-    social: {
-      instagram: "https://instagram.com/lisaanderson",
-      tiktok: "https://tiktok.com/@lisaanderson"
-    }
-  },
-  {
-    id: "mr ogon",
-    name: "Emmanuel Ogon",
-    title: "Head GIG Logistics",
-    bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
-    achievements: [
-      "15+ years in client relationship management",
-      "Achieved 98% client retention rate",
-      "Expert in custom security solutions",
-      "Award-winning customer service leader",
-      "MBA in Business Administration and Client Management"
-    ],
-    images: [img2175, imag2176],
-    social: {
-      instagram: "https://instagram.com/lisaanderson",
-      tiktok: "https://tiktok.com/@lisaanderson"
-    }
-  },
-   {
-    id: "mr teslim",
-    name: "TESLIM OKUNOLA",
-    title: "Head of Technical",
-    bio: "Lisa Anderson ensures exceptional client satisfaction and manages key account relationships. Her client-centric approach has helped Proton Security build long-term partnerships with leading organizations.",
-    achievements: [
-      "15+ years in client relationship management",
-      "Achieved 98% client retention rate",
-      "Expert in custom security solutions",
-      "Award-winning customer service leader",
-      "MBA in Business Administration and Client Management"
-    ],
-    images: [img2111, img2112],
-    social: {
-      instagram: "https://instagram.com/lisaanderson",
-      tiktok: "https://tiktok.com/@lisaanderson"
-    }
-  },
-  
+ 
+
 ];

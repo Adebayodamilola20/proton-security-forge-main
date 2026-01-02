@@ -24,7 +24,7 @@ const DirectorProfile = () => {
     return () => clearInterval(interval);
   }, [director]);
 
-  // Scroll to top on component mount (route change) - ensures page starts at the top (picture visible)
+ 
   useEffect(() => {
     const timer = setTimeout(() => {
       window.scrollTo(0, 0);

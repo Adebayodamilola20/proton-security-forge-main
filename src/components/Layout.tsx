@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, Facebook, Instagram, Twitter, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, Mail, Facebook, Instagram, Twitter, ChevronDown, Linkedin } from "lucide-react";
 
 // A dummy Button component for this single-file React context
 const Button = ({ variant, className, children, onClick }) => (
-    <button
-        onClick={onClick}
-        className={`px-4 py-2 rounded-lg font-semibold transition-colors duration-300 ${className} ${
-            variant === 'outline' ? 'border-2' : 'bg-highlight text-primary'
-        }`}
-    >
-        {children}
-    </button>
+  <button
+    onClick={onClick}
+    className={`px-4 py-2 rounded-lg font-semibold transition-colors duration-300 ${className} ${variant === 'outline' ? 'border-2' : 'bg-highlight text-primary'
+      }`}
+  >
+    {children}
+  </button>
 );
 
 const Layout = ({ children }) => {
@@ -44,7 +43,7 @@ const Layout = ({ children }) => {
               </div>
               <div>
                 <div className="text-xl font-bold">Proton Security</div>
-                <div className="text-xs text-accent">Service Nigeria Limited</div>
+                <div className="text-xs text-accent">Services Nigeria Limited</div>
               </div>
             </Link>
 
@@ -52,7 +51,7 @@ const Layout = ({ children }) => {
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 item.hasDropdown ? (
-                  <div 
+                  <div
                     key={item.path}
                     className="relative group"
                     onMouseEnter={() => setIsAboutDropdownOpen(true)}
@@ -60,16 +59,15 @@ const Layout = ({ children }) => {
                   >
                     <Link
                       to={item.path}
-                      className={`flex items-center gap-1 py-2 transition-colors hover:text-highlight ${
-                        isActive(item.path) || isActive("/policy") || isActive("/blog")
-                          ? "text-highlight font-semibold"
-                          : ""
-                      }`}
+                      className={`flex items-center gap-1 py-2 transition-colors hover:text-highlight ${isActive(item.path) || isActive("/policy") || isActive("/blog")
+                        ? "text-highlight font-semibold"
+                        : ""
+                        }`}
                     >
                       {item.name}
                       <ChevronDown size={16} className={`transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
                     </Link>
-                    
+
                     {isAboutDropdownOpen && (
                       <div className="absolute top-full left-0 mt-2 w-48 bg-white text-primary rounded-lg shadow-xl py-2 z-50">
                         <Link
@@ -93,11 +91,10 @@ const Layout = ({ children }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`relative py-2 transition-colors hover:text-highlight ${
-                      isActive(item.path)
-                        ? "text-highlight font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-highlight"
-                        : ""
-                    }`}
+                    className={`relative py-2 transition-colors hover:text-highlight ${isActive(item.path)
+                      ? "text-highlight font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-highlight"
+                      : ""
+                      }`}
                   >
                     {item.name}
                   </Link>
@@ -128,9 +125,8 @@ const Layout = ({ children }) => {
                 item.hasDropdown ? (
                   <div key={item.path}>
                     <button
-                      className={`w-full flex items-center justify-between py-2 px-4 rounded transition-colors hover:bg-highlight/10 ${
-                        isActive(item.path) || isActive("/policy") || isActive("/blog") ? "bg-highlight/20 text-highlight font-semibold" : ""
-                      }`}
+                      className={`w-full flex items-center justify-between py-2 px-4 rounded transition-colors hover:bg-highlight/10 ${isActive(item.path) || isActive("/policy") || isActive("/blog") ? "bg-highlight/20 text-highlight font-semibold" : ""
+                        }`}
                       onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
                     >
                       <span>{item.name}</span>
@@ -165,9 +161,8 @@ const Layout = ({ children }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`block py-2 px-4 rounded transition-colors hover:bg-highlight/10 ${
-                      isActive(item.path) ? "bg-highlight/20 text-highlight font-semibold" : ""
-                    }`}
+                    className={`block py-2 px-4 rounded transition-colors hover:bg-highlight/10 ${isActive(item.path) ? "bg-highlight/20 text-highlight font-semibold" : ""
+                      }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -186,7 +181,9 @@ const Layout = ({ children }) => {
 
       {/* Main Content */}
       <main className="flex-1 text-primary">
-        {children}
+        <div key={location.pathname} className="page-fade-in">
+          {children}
+        </div>
       </main>
 
       {/* Footer */}
@@ -213,6 +210,9 @@ const Layout = ({ children }) => {
                 </a>
                 <a href="https://x.com/protonsecurity?s=21" className="hover:text-highlight transition-colors">
                   <Twitter size={20} />
+                </a>
+                <a href="https://www.linkedin.com/" className="hover:text-highlight transition-colors">
+                  <Linkedin size={20} />
                 </a>
               </div>
             </div>
@@ -250,15 +250,15 @@ const Layout = ({ children }) => {
                 <div className="flex items-start space-x-2">
                   <Phone size={18} className="mt-0.5 flex-shrink-0 text-accent" />
                   <div>
-                    <p>+1 (555) 123-4567</p>
-                    <p>+1 (555) 987-6543</p>
+                    <p>08032023600</p>
+                    <p>07032027481</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-2">
                   <Mail size={18} className="mt-0.5 flex-shrink-0 text-accent" />
                   <div>
                     <p>info@protonsecurity.com</p>
-                    <p>support@protonsecurity.com</p>
+                    <p></p>
                   </div>
                 </div>
               </div>

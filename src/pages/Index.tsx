@@ -7,12 +7,17 @@ import { directors } from "@/data/directors";
 import { services } from "@/data/services";
 import DirectorCard from "@/components/DirectorCard";
 import AnimatedSection from "@/components/AnimatedSection";
+import CountUp from "@/components/CountUp";
+import StaggeredText from "@/components/StaggeredText";
 import heroImage from "@/assets/IMG_2209.jpg";
+import heroImage2 from "@/assets/IMG_2208.jpg";
+import heroImage3 from "@/assets/IMG_2171.jpg";
+import heroImage4 from "@/assets/IMG_2232.jpg";
 import trainingImage from "@/assets/IMG_2208.jpg";
 
-// WARNING: SECURITY RISK! This key should NEVER be hardcoded in production client-side code.
-// Please move this API key to a secure backend environment variable and use a proxy server.
-const API_KEY = "b71a861324284e6a803e294253a09ba6";
+/*
+const API_KEY = "";
+*/
 
 // Define the bounce animation keyframes for the chat button
 const BOUNCE_ANIMATION_STYLE = `
@@ -32,6 +37,16 @@ const BOUNCE_ANIMATION_STYLE = `
 `;
 
 const Index = () => {
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 3000);
+    return () => clearInterval(slideInterval);
+  }, [heroImages.length]);
+
   // FIXED: Filter directors with images before slicing
   const featuredDirectors = directors
     .filter(d => d.images && d.images.length > 0)
@@ -217,67 +232,156 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
 
       <style>{BOUNCE_ANIMATION_STYLE}</style>
 
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Proton Security Hero"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/50 to-primary/70"></div>
+      <section className="relative h-[90vh] flex items-center justify-start overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentHeroIndex ? "opacity-100" : "opacity-0"
+                }`}
+            >
+              <img
+                src={img}
+                alt={`Proton Security Hero ${index + 1}`}
+                className={`w-full h-full object-cover ${index === currentHeroIndex ? "animate-zoom-out" : ""}`}
+              />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
 
-        <div className="relative z-10 container-custom px-4 text-white text-center">
+        <div className="relative z-10 container-custom px-4 text-white">
           <AnimatedSection>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              PROTON SECURITY <span className="text-highlight">SERVICES</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
-              Protecting what matters most with world-class training, advanced technology, and unmatched expertise
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services">
-                <Button size="lg" className="btn-highlight text-lg px-8">
-                  Our Services <ArrowRight className="ml-2" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="btn-outline-highlight text-lg px-8">
-                  Get in Touch
-                </Button>
-              </Link>
+            <div className="max-w-4xl text-left pl-4 md:pl-0">
+              <div className="inline-block bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 text-yellow-500 px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                PROTON SECURITY SERVICES
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Your Safety Isn't <br />
+                Just a Priority— <br />
+                <span className="text-yellow-500 italic">It's Our Legacy in Motion.</span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-10 max-w-2xl text-gray-200">
+                We don't just protect spaces, we secure futures. Bridging the gap between
+                security, technology, and visionary protection.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                <Link to="/contact">
+                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-lg px-8 rounded-full">
+                    Join Our Team
+                  </Button>
+                </Link>
+                <Link to="/gallery">
+                  <Button size="lg" variant="outline" className="border-white text-black hover:bg-black/10 text-lg px-8 rounded-full">
+                    <span className="mr-2">▷</span> Gallery
+                  </Button>
+                </Link>
+              </div>
             </div>
           </AnimatedSection>
+
+          {/* Bottom Indicators */}
+        
         </div>
       </section>
 
       {/* Stats Section */}
       <section className="section-padding bg-primary text-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
             <AnimatedSection delay={0}>
-              <div>
-                <div className="text-5xl font-bold text-highlight mb-2">21+</div>
-                <div className="text-lg">Years Experience</div>
+              <div className="p-4">
+                <div className="text-5xl font-bold text-highlight mb-2">
+                  <CountUp end={21} suffix="+" />
+                </div>
+                <div className="text-lg text-white/80">Years Experience</div>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={100}>
-              <div>
-                <div className="text-5xl font-bold text-highlight mb-2">12k+</div>
-                <div className="text-lg">Trained Professionals</div>
+              <div className="p-4">
+                <div className="text-5xl font-bold text-highlight mb-2">
+                  <CountUp end={12000} suffix="+" />
+                </div>
+                <div className="text-lg text-white/80">Trained Professionals</div>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={200}>
-              <div>
-                <div className="text-5xl font-bold text-highlight mb-2">60+</div>
-                <div className="text-lg">Corporate Clients</div>
+              <div className="p-4">
+                <div className="text-5xl font-bold text-highlight mb-2">
+                  <CountUp end={60} suffix="+" />
+                </div>
+                <div className="text-lg text-white/80">Corporate Clients</div>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={300}>
-              <div>
-                <div className="text-5xl font-bold text-highlight mb-2">7+</div>
-                <div className="text-lg">Countries Served</div>
+              <div className="p-4">
+                <div className="text-5xl font-bold text-highlight mb-2">
+                  <CountUp end={7} suffix="+" />
+                </div>
+                <div className="text-lg text-white/80">Countries Served</div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Gallery Showcase Section */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <AnimatedSection>
+              <div className="space-y-8">
+                <div className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
+                  📸 Gallery Showcase
+                </div>
+                <h2 className="text-5xl font-bold text-gray-900 leading-tight">
+                  Explore Our Creative <br />
+                  <span className="text-yellow-500">Gallery</span>
+                </h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Discover the discipline and dedication behind our operations, showcases vibrant teams, rigorous training, and excellence from around the world.
+                </p>
+                <Link to="/gallery">
+                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 rounded-full text-lg h-14">
+                    View Gallery <ArrowRight className="ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </AnimatedSection>
+
+            {/* Right Images */}
+            <AnimatedSection delay={200}>
+              <div className="flex gap-6 relative">
+                {/* Image 1 */}
+                <div className="w-1/2 mt-12">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] relative group">
+                    <img
+                      src={heroImage3}
+                      alt="Security Team"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h4 className="font-bold text-lg">Proton Team</h4>
+                      <p className="text-sm text-gray-300">Field Operations</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image 2 */}
+                <div className="w-1/2">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] relative group">
+                    <img
+                      src={heroImage2}
+                      alt="Training Session"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h4 className="font-bold text-lg">Training</h4>
+                      <p className="text-sm text-gray-300">Tactical Drills</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -314,7 +418,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
               <div className="grid grid-cols-2 gap-4">
                 <Card className="bg-gradient-to-br from-primary to-accent text-white p-6 hover:scale-105 transition-transform">
                   <Shield size={40} className="mb-4 text-highlight" />
-                  <h3 className="text-xl font-bold mb-2">Gig Secured Logistics</h3>
+                  <h3 className="text-xl font-bold mb-2">Secured Logistics</h3>
                   <p className="text-sm">Combines security, and technology to move goods efficiently.</p>
                 </Card>
                 <Card className="bg-gradient-to-br from-accent to-primary text-white p-6 hover:scale-105 transition-transform">
@@ -440,7 +544,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
               <div className="inline-block bg-highlight/10 text-highlight px-4 py-1 rounded-full text-sm font-semibold mb-4">
                 LEADERSHIP TEAM
               </div>
-              <h2 className="text-4xl font-bold text-primary mb-4">Meet Our Board of Directors</h2>
+              <h2 className="text-4xl font-bold text-primary mb-4">Meet Our Directors</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Experienced leaders driving innovation and excellence in security solutions
               </p>

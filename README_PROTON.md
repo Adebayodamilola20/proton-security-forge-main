@@ -11,7 +11,7 @@ The website uses a navy/light blue/yellow color scheme:
 
 All colors are defined as HSL values in `src/index.css` using CSS custom properties.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/
