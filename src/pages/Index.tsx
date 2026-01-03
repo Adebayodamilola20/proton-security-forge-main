@@ -232,7 +232,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
 
       <style>{BOUNCE_ANIMATION_STYLE}</style>
 
-      <section className="relative h-[90vh] flex items-center justify-start overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-start overflow-hidden py-20 md:py-0">
         <div className="absolute inset-0 z-0">
           {heroImages.map((img, index) => (
             <div
@@ -281,7 +281,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
           </AnimatedSection>
 
           {/* Bottom Indicators */}
-        
+
         </div>
       </section>
 
