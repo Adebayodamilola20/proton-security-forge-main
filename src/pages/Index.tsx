@@ -47,7 +47,7 @@ const Index = () => {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
-  // FIXED: Filter directors with images before slicing
+  
   const featuredDirectors = directors
     .filter(d => d.images && d.images.length > 0)
     .slice(0, 3);

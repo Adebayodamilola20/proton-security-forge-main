@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, Facebook, Instagram, Twitter, ChevronDown, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 // A dummy Button component for this single-file React context
-const Button = ({ variant, className, children, onClick }) => (
+const Button = ({ variant, className, children, onClick }: { variant?: string, className?: string, children: any, onClick?: () => void }) => (
   <button
     onClick={onClick}
     className={`px-4 py-2 rounded-lg font-semibold transition-colors duration-300 ${className} ${variant === 'outline' ? 'border-2' : 'bg-highlight text-primary'
@@ -38,9 +39,7 @@ const Layout = ({ children }) => {
           <div className="flex items-center justify-between h-20 px-4">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-highlight rounded-lg flex items-center justify-center font-bold text-primary text-xl">
-                PS
-              </div>
+              <img src={logo} alt="Proton Security Logo" className="w-12 h-12 object-contain" />
               <div>
                 <div className="text-xl font-bold">Proton Security</div>
                 <div className="text-xs text-accent">Services Nigeria Limited</div>
@@ -193,9 +192,7 @@ const Layout = ({ children }) => {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-highlight rounded-lg flex items-center justify-center font-bold text-primary">
-                  PS
-                </div>
+                <img src={logo} alt="Proton Security Logo" className="w-10 h-10 object-contain" />
                 <div className="text-lg font-bold">Proton Security</div>
               </div>
               <p className="text-sm text-gray-300 mb-4">
@@ -238,7 +235,6 @@ const Layout = ({ children }) => {
                 <li>Corporate Security</li>
                 <li>Security Training</li>
                 <li>Physical Security</li>
-                <li>Cybersecurity</li>
                 <li>Consulting</li>
               </ul>
             </div>

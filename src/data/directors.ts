@@ -60,7 +60,7 @@ export const directors: Director[] = [
       "Executive Director (Operations & Business Development) at Arksego Nigeria Limited",
       "Alumnus of Lagos Business School, Senior Management Program (SMP 46)"
     ],
-    images: [img4555, img2179, img2180],
+    images: [img4555,],
     social: {
       tiktok: "https://tiktok.com/@johnsmith",
       instagram: "https://instagram.com/johnsmith",
@@ -99,24 +99,22 @@ export const directors: Director[] = [
     }
   },
   {
-    id: "jennifer-brown",
-    name: "Kayode Feilx Bamgbose",
-    title: "Operational Manager La",
-    bio: "Jennifer Brown leads Proton Security's risk analysis and threat assessment division. Her analytical expertise helps organizations identify vulnerabilities and implement proactive security measures.",
+    id: "kayode-bamgbose",
+    name: "Kayode Felix Bamgbose",
+    title: "Operational Manager",
+    bio: "Kayode Felix Bamgbose is a dedicated Operational Manager at Proton Security, overseeing the day-to-day security operations and ensuring the highest standards of safety and efficiency. With his extensive background in operational management, he leads our field teams with precision and strategic focus.",
     achievements: [
-      "18 years in security risk management",
-      "Conducted risk assessments for Fortune 100 companies",
-      "Certified Risk Management Professional",
-      "Published researcher on security threat analysis",
-      "Ph.D. in Risk Management and Security Analytics"
+      "Expert in operational security management",
+      "Lead coordinator for large-scale security deployments",
+      "Specialist in tactical planning and execution",
+      "Over 15 years of experience in security operations"
     ],
-    images: [img2192, img2193
-    ],
+    images: [img2192, img2193],
     social: {
-      instagram: "https://instagram.com/jenniferbrown",
-      facebook: "https://facebook.com/jenniferbrown"
+      instagram: "https://instagram.com/kayodebamgbose",
+      facebook: "https://facebook.com/kayodebamgbose"
     }
   },
- 
+
 
 ];
