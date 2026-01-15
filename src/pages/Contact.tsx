@@ -128,7 +128,15 @@ const Contact = () => {
                 <div key={i} className="flex gap-6 shrink-0">
                   <ContactCard icon={<Phone className="text-accent" />} title="Phone" info={["08032023600", "07032027481"]} />
                   <ContactCard icon={<Mail className="text-accent" />} title="Email" info={["info@protonsecurity.com",]} />
-                  <ContactCard icon={<MapPin className="text-accent" />} title="Lagos HQ" info={["10, Jibowu street, Yaba,", "Lagos, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Head Office" info={["10, Jibowu street, Yaba,", "Lagos State, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Lagos Regional Office" info={["15, Akanbi Cresent, Onitiri,","Lagos State, Nigeria"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Northern Regional Office" info={["Plot 1031, Mabushi District,","Cadastral Zone,FCT- Abuja"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="South/West Regional Office" info={["1, Paul Hendrickse Road, Off Aare Avenue, ","New Bodija,  Ibadan, Oyo State, Nigeria"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="South/East Regional Office" info={["4, Graceland Avenue, Tombia Extension,","G R A Phase 2, Port Harcourt, Rivers State,Nigeria"]} />
+
+
+
+
                   <ContactCard icon={<MapPin className="text-accent" />} title="Abuja Office" info={["Plot 1031, Mabushi District,", "Cadastral Zone, FCT-Abuja"]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Ibadan Office" info={["1,Paul Hendrickse Road, ", "Off Aare Avenue,New Bodija,Ibandan "]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Port-Harcourt Office" info={["4,Graceland Avenue, ", "Tombia Extension,GRA Phase 2,Port-Harcourt"]} />
@@ -187,7 +195,7 @@ const Contact = () => {
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-semibold text-primary mb-2">
-                        Subject *
+                        Suggestion *
                       </label>
                       <Input
                         id="subject"
@@ -197,7 +205,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         className="w-full"
-                        placeholder="What is this regarding?"
+                        placeholder="What is this about?"
                         disabled={isSubmitting}
                       />
                     </div>
