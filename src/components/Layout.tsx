@@ -215,10 +215,10 @@ const Layout = ({ children }) => {
                 <a href="https://www.instagram.com/protonsecurityservices/" className="hover:text-highlight transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="https://x.com/protonsecurity?s=21" className="hover:text-highlight transition-colors">
+                <a href=" https://x.com/protonsecuritys" className="hover:text-highlight transition-colors">
                   <Twitter size={20} />
                 </a>
-                <a href="https://www.linkedin.com/" className="hover:text-highlight transition-colors">
+                <a href="https://www.linkedin.com/company/protonsecurityservices" className="hover:text-highlight transition-colors">
                   <Linkedin size={20} />
                 </a>
               </div>
