@@ -52,7 +52,6 @@ const Board = () => {
         "PAUL BAMGBOSE",
         "ADEKUNMI ODEBUNMI (Managing)"
       ].map((name, index) => {
-        // Step 1: Split the name into the 'Name' and the 'Bracket' part
         const parts = name.split(/(\(.*?\))/); 
 
         return (
@@ -60,14 +59,19 @@ const Board = () => {
             key={index} 
             className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm transition-all hover:shadow-md hover:scale-105 group"
           >
-            {/* Removed the 'uppercase' class here so our JS logic can work */}
             <p className="text-lg font-bold text-primary tracking-wide group-hover:text-accent transition-colors">
-              {parts.map((part, i) => (
-                // If it starts with '(', make it lowercase. Otherwise, keep it uppercase.
-                <span key={i}>
-                  {part.startsWith('(') ? part.toLowerCase() : part.toUpperCase()}
-                </span>
-              ))}
+              {parts.map((part, i) => {
+                if (part.startsWith('(')) {
+                  // This logic makes the first letter after '(' uppercase, and the rest lowercase
+                  return (
+                    <span key={i} className="font-medium"> 
+                      {part.charAt(0) + part.charAt(1).toUpperCase() + part.slice(2).toLowerCase()}
+                    </span>
+                  );
+                }
+                // Keep the names fully uppercase
+                return <span key={i}>{part.toUpperCase()}</span>;
+              })}
             </p>
           </div>
         );
@@ -81,7 +85,7 @@ const Board = () => {
             <div className="text-left">
               <div className="inline-block">
                 <h2 className="text-4xl font-bold text-primary mb-2">
-                Director of Adminstration
+                Director of Management
                 </h2>
                 <div className="w-24 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto mt-1 mb-12"></div>
               </div>

@@ -127,11 +127,12 @@ const Contact = () => {
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="flex gap-6 shrink-0">
                   <ContactCard icon={<Phone className="text-accent" />} title="Phone" info={["08032023600", "07032027481"]} />
-                  <ContactCard icon={<Mail className="text-accent" />} title="Email" info={["info@protonsecurity.com", "support@protonsecurity.com"]} />
+                  <ContactCard icon={<Mail className="text-accent" />} title="Email" info={["info@protonsecurity.com",]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Lagos HQ" info={["10, Jibowu street, Yaba,", "Lagos, Nigeria."]} />
-                  <ContactCard icon={<MapPin className="text-accent" />} title="Ibadan Branch" info={["22, Ring Road, Challenge,", "Ibadan, Nigeria."]} />
-                  <ContactCard icon={<MapPin className="text-accent" />} title="Benin Office" info={["15, Akpakpava Road,", "Benin City, Nigeria."]} />
-                  <ContactCard icon={<MapPin className="text-accent" />} title="Ado-Ekiti Branch" info={["10, Fajuyi Park Way,", "Ado-Ekiti, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Abuja Office" info={["Plot 1031, Mabushi District,", "Cadastral Zone, FCT-Abuja"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Ibandan Office" info={["1,Paul Hendrickse Road, ", "Off Aare Avenue,New Bodija,Ibandan "]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Port-Harcourt Office" info={["4,Graceland Avenue, ", "Tombia Extension,GRA Phase 2,Port-Harcourt"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Lagos Office" info={["15,Akanbi Cresent, ","Onitiri,Lagos State"]} />
                   <ContactCard icon={<Clock className="text-accent" />} title="Hours" info={["Mon - Fri: 8AM - 6PM", "24/7 Emergency Support"]} />
                 </div>
               ))}

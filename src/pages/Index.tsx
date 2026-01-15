@@ -608,8 +608,8 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       JM
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">John Martinez</h4>
-                      <p className="text-sm text-gray-500">CEO, Tech Global Inc.</p>
+                      <h4 className="font-bold text-primary">CHI Limited</h4>
+                      <p className="text-sm text-gray-500"></p>
                     </div>
                   </div>
                 </CardContent>
@@ -635,8 +635,8 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       SA
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">Sarah Anderson</h4>
-                      <p className="text-sm text-gray-500">Director, Retail Solutions Ltd</p>
+                      <h4 className="font-bold text-primary">MTN Nigeria</h4>
+                      <p className="text-sm text-gray-500"></p>
                     </div>
                   </div>
                 </CardContent>
@@ -662,8 +662,8 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       DW
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">David Williams</h4>
-                      <p className="text-sm text-gray-500">Event Manager, Prestige Events</p>
+                      <h4 className="font-bold text-primary">Ardova PLC</h4>
+                      <p className="text-sm text-gray-500"></p>
                     </div>
                   </div>
                 </CardContent>
@@ -689,7 +689,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       ER
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">Emma Roberts</h4>
+                      <h4 className="font-bold text-primary">Cumming West Africa</h4>
                       <p className="text-sm text-gray-500">Security Manager, Global Bank</p>
                     </div>
                   </div>
@@ -716,7 +716,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       MC
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">Michael Chen</h4>
+                      <h4 className="font-bold text-primary"></h4>
                       <p className="text-sm text-gray-500">Operations Director, Manufacturing Co</p>
                     </div>
                   </div>
@@ -743,7 +743,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                       LT
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary">Lisa Thompson</h4>
+                      <h4 className="font-bold text-primary"></h4>
                       <p className="text-sm text-gray-500">Facility Manager, Healthcare Group</p>
                     </div>
                   </div>
