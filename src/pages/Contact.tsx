@@ -130,7 +130,7 @@ const Contact = () => {
                   <ContactCard icon={<Mail className="text-accent" />} title="Email" info={["info@protonsecurity.com",]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Lagos HQ" info={["10, Jibowu street, Yaba,", "Lagos, Nigeria."]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Abuja Office" info={["Plot 1031, Mabushi District,", "Cadastral Zone, FCT-Abuja"]} />
-                  <ContactCard icon={<MapPin className="text-accent" />} title="Ibandan Office" info={["1,Paul Hendrickse Road, ", "Off Aare Avenue,New Bodija,Ibandan "]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Ibadan Office" info={["1,Paul Hendrickse Road, ", "Off Aare Avenue,New Bodija,Ibandan "]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Port-Harcourt Office" info={["4,Graceland Avenue, ", "Tombia Extension,GRA Phase 2,Port-Harcourt"]} />
                   <ContactCard icon={<MapPin className="text-accent" />} title="Lagos Office" info={["15,Akanbi Cresent, ","Onitiri,Lagos State"]} />
                   <ContactCard icon={<Clock className="text-accent" />} title="Hours" info={["Mon - Fri: 8AM - 6PM", "24/7 Emergency Support"]} />
