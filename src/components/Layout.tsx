@@ -123,14 +123,24 @@ const Layout = ({ children }) => {
               {navItems.map((item) => (
                 item.hasDropdown ? (
                   <div key={item.path}>
-                    <button
-                      className={`w-full flex items-center justify-between py-2 px-4 rounded transition-colors hover:bg-highlight/10 ${isActive(item.path) || isActive("/policy") || isActive("/blog") ? "bg-highlight/20 text-highlight font-semibold" : ""
-                        }`}
-                      onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown size={16} className={`transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
-                    </button>
+                    <div className="w-full flex items-center justify-between py-2 px-4 rounded transition-colors hover:bg-highlight/10">
+                      <Link
+                        to={item.path}
+                        className={`flex-1 ${isActive(item.path) || isActive("/policy") || isActive("/blog") ? "text-highlight font-semibold" : ""}`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                        }}
+                        className="p-2"
+                      >
+                        <ChevronDown size={16} className={`transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    </div>
                     {isAboutDropdownOpen && (
                       <div className="ml-4 mt-2 space-y-2">
                         <Link

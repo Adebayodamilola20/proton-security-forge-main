@@ -49,7 +49,7 @@ const Index = () => {
     return () => clearInterval(slideInterval);
   }, [heroImages.length]);
 
-  
+
   const featuredDirectors = directors
     .filter(d => d.images && d.images.length > 0)
     .slice(0, 3);
@@ -329,7 +329,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
 
       {/* NEW: Gallery Showcase Section */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="container-custom">
+        <div className="container-custom px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <AnimatedSection>
