@@ -12,7 +12,7 @@ export const services: Service[] = [
   {
     id: "corporate-security",
     title: "Corporate Security Solutions",
-    description: "Comprehensive security programs tailored for corporate environments, protecting assets, personnel, and intellectual property.",
+    description: "Comprehensive security programs tailored for corporate environments, protection of assets and personnel",
     icon: Building,
     features: [
       "24/7 Security Monitoring",

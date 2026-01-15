@@ -69,8 +69,8 @@ export const directors: Director[] = [
   },
   {
     id: "sarah-john",
-    name: "Olumide Olayinka",
-    title: "Director for Admin,Finance and Quaility Control",
+    name: "Dr Olumide Olayinka",
+    title: "Director of Admin,Finance and Quaility Control",
     bio: "Dr. Olumide Olayinka is a seasoned legal practitioner with over thirty-two years of experience, having been called to the Nigerian Bar in 1992. A graduate of the Ogun State University, he obtained both the Master of Industrial and Labour Relations (MILR) and Master of Laws (LLM) degrees from the University of Lagos. Further, he earned a PhD in Law from the Leeds Beckett University, Leeds, United Kingdom. He was at various times, inter alia, Senior State Counsel in the Ministry of Justice, Ogun State; as well as General Counsel, at the Troyka Group in Lagos State.",
     achievements: [
     ],
@@ -83,7 +83,7 @@ export const directors: Director[] = [
   {
     id: "michael-chen",
     name: "Olabisi Familusi",
-    title: "Director Business Development and Strategy",
+    title: "Director of Business Development and Strategy",
     bio: "A dynamic, results-driven, and innovative business strategist with nearly 18 years of progressive experience in Sales, Marketing, and Revenue Optimization. Recognized for driving sustainable growth, improving brand visibility, and developing high-performing teams across diverse markets and industries.",
     achievements: [
       "Drove 40% regional revenue growth through strategic business expansion.",

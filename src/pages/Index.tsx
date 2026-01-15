@@ -14,6 +14,8 @@ import heroImage2 from "@/assets/IMG_2208.jpg";
 import heroImage3 from "@/assets/IMG_2171.jpg";
 import heroImage4 from "@/assets/IMG_2232.jpg";
 import trainingImage from "@/assets/IMG_2208.jpg";
+import gemiImages233 from "@/assets/Gemini_Generated_Image_2l1i1i2l1i1i2l1i.png";
+import gemini12344 from "@/assets/Gemini_Generated_Image_brqnxqbrqnxqbrqn.png";
 
 /*
 const API_KEY = "";
@@ -340,7 +342,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                   <span className="text-yellow-500">Gallery</span>
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Discover the discipline and dedication behind our operations, showcases vibrant teams, rigorous training, and excellence from around the world.
+                  Discover the discipline and dedication behind our operations, which showcase vibrant teams, rigorous training, and excellence from around the world.
                 </p>
                 <Link to="/gallery">
                   <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 rounded-full text-lg h-14">
@@ -357,7 +359,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                 <div className="w-1/2 mt-12">
                   <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] relative group">
                     <img
-                      src={heroImage3}
+                      src={gemiImages233}
                       alt="Security Team"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -372,7 +374,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                 <div className="w-1/2">
                   <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] relative group">
                     <img
-                      src={heroImage2}
+                      src={gemini12344}
                       alt="Training Session"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -401,7 +403,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                   Setting the Standard in Security Excellence
                 </h2>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Proton Security is a premier provider of comprehensive security solutions, combining cutting-edge technology with decades of expertise to deliver unparalleled protection for businesses and organizations worldwide.
+                  Proton is a premier provider of comprehensive security solutions, combining cutting-edge technology with decades of expertise to deliver unparalleled protection for businesses and organizations worldwide.
                 </p>
                 <p className="text-gray-600 mb-8">
                   Our team of certified professionals brings together military, law enforcement, and corporate security experience to create customized solutions that address your unique security challenges.
@@ -419,7 +421,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                 <Card className="bg-gradient-to-br from-primary to-accent text-white p-6 hover:scale-105 transition-transform">
                   <Shield size={40} className="mb-4 text-highlight" />
                   <h3 className="text-xl font-bold mb-2">Secured Logistics</h3>
-                  <p className="text-sm">Combines security, and technology to move goods efficiently.</p>
+                  <p className="text-sm">Combines security and technology to move goods efficiently.</p>
                 </Card>
                 <Card className="bg-gradient-to-br from-accent to-primary text-white p-6 hover:scale-105 transition-transform">
                   <Award size={40} className="mb-4 text-highlight" />
@@ -515,7 +517,7 @@ Phone: +234 8032023600 (REPLACE THIS WITH YOUR REAL PHONE NUMBER***)
                   World-Class Security Training Programs
                 </h2>
                 <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-                  Our comprehensive training programs are designed to develop highly skilled security professionals capable of handling any situation with confidence and expertise.
+                  Our comprehensive training programs are designed to develop highly skilled security professionals capable of handling diverse situations with confidence and expertise.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {["Basic Security Training", "Advanced Tactical Operations", "Crisis Management", "Specialized Certifications"].map((item, idx) => (

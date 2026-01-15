@@ -66,7 +66,7 @@ const Gallery = () => {
             <div className="mt-12 bg-highlight/10 border-l-4 border-highlight p-6 rounded-r-lg">
               <p className="text-primary font-semibold mb-2">📸All Images is update here </p>
               <p className="text-gray-600 text-sm">
-                 <code className="bg-primary/10 px-2 py-1 rounded"></code> With actual  photos from operations, training sessions, and events.
+                <code className="bg-primary/10 px-2 py-1 rounded"></code> With actual  photos from operations, training sessions, and events.
               </p>
             </div>
           </AnimatedSection>
@@ -76,25 +76,33 @@ const Gallery = () => {
       {/* Lightbox */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 bg-black/98 z-[9999] flex flex-col items-center justify-center p-4 md:p-12 animate-fade-in"
           onClick={closeLightbox}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-highlight transition-colors p-2"
+            className="absolute top-6 right-6 text-white hover:text-highlight transition-colors p-3 z-[10001] bg-white/10 backdrop-blur-md rounded-full shadow-lg"
             onClick={closeLightbox}
+            aria-label="Close lightbox"
           >
             <X size={32} />
           </button>
-          <div className="max-w-6xl max-h-[90vh] flex flex-col items-center">
-            <img
-              src={selectedImage}
-              alt={selectedTitle}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <div className="mt-4 text-white text-center">
-              <h3 className="text-xl font-semibold">{selectedTitle}</h3>
+
+          <div
+            className="flex flex-col items-center justify-center max-w-full max-h-full space-y-6 md:space-y-10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative group flex items-center justify-center">
+              <img
+                src={selectedImage}
+                alt={selectedTitle}
+                className="max-w-[95vw] md:max-w-[85vw] max-h-[75vh] object-contain rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] ring-1 ring-white/20 transition-all duration-300"
+              />
             </div>
+            {selectedTitle && (
+              <h3 className="text-white text-2xl md:text-4xl font-bold tracking-tight text-center px-4 max-w-3xl drop-shadow-lg">
+                {selectedTitle}
+              </h3>
+            )}
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";  // Added useEffect for init
+import { useState, useEffect, ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,22 @@ import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+
+const ContactCard = ({ icon, title, info }: { icon: ReactNode, title: string, info: string[] }) => (
+  <div className="min-w-[300px] flex-shrink-0">
+    <Card className="h-full text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-accent bg-white shadow-sm">
+      <CardContent className="p-8">
+        <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          {icon}
+        </div>
+        <h3 className="font-bold text-primary mb-2 text-lg">{title}</h3>
+        {info.map((line, idx) => (
+          <p key={idx} className="text-sm text-gray-600 leading-relaxed">{line}</p>
+        ))}
+      </CardContent>
+    </Card>
+  </div>
+);
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,11 +34,11 @@ const Contact = () => {
     message: ""
   });
 
-  
+
   useEffect(() => {
-    const PUBLIC_KEY = 'iGFdyWHL16gdFMaSO';  
+    const PUBLIC_KEY = 'MobE0Sl28TVS8Mbcl';
     emailjs.init(PUBLIC_KEY);
-    console.log("EmailJS Initialized with Public Key:", PUBLIC_KEY);  
+    console.log("EmailJS Initialized with Public Key:", PUBLIC_KEY);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,10 +47,10 @@ const Contact = () => {
 
     try {
       // EmailJS Credentials
-      const SERVICE_ID = 'service_bx69i3r';
-      const TEMPLATE_ID = 'vergo_damilola2007';
+      const SERVICE_ID = 'service_rk1k1qk';
+      const TEMPLATE_ID = 'template_yu0kfni';
 
-      console.log("Sending email with data:", formData);  
+      console.log("Sending email with data:", formData);
       console.log("Using Service ID:", SERVICE_ID, "Template ID:", TEMPLATE_ID);  // Debug: Verify IDs
 
       // Send email using EmailJS (Fixed: Simplified params; to_email set in dashboard)
@@ -49,7 +65,7 @@ const Contact = () => {
         }
       );
 
-      console.log("EmailJS Send Result:", result);  
+      console.log("EmailJS Send Result:", result);
 
       toast({
         title: "Message Sent Successfully!",
@@ -103,64 +119,30 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="section-padding bg-background">
+      {/* Contact Info Scrolling Banner */}
+      <section className="py-12 bg-background overflow-hidden border-b border-gray-100">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <AnimatedSection>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-accent">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="text-accent" size={28} />
-                  </div>
-                  <h3 className="font-bold text-primary mb-2">Phone</h3>
-                  <p className="text-sm text-gray-600">08032023600</p>
-                  <p className="text-sm text-gray-600">07032027481</p>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection delay={100}>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-accent">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="text-accent" size={28} />
-                  </div>
-                  <h3 className="font-bold text-primary mb-2">Email</h3>
-                  <p className="text-sm text-gray-600">info@protonsecurity.com</p>
-                  <p className="text-sm text-gray-600">support@protonsecurity.com</p>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-accent">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="text-accent" size={28} />
-                  </div>
-                  <h3 className="font-bold text-primary mb-2">Address</h3>
-                  <p className="text-sm text-gray-600">10, Jibowu street, Yaba,</p>
-                  <p className="text-sm text-gray-600">Lagos, Nigeria.</p>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection delay={300}>
-              <Card className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-accent">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="text-accent" size={28} />
-                  </div>
-                  <h3 className="font-bold text-primary mb-2">Business Hours</h3>
-                  <p className="text-sm text-gray-600">Mon - Fri: 8AM - 6PM</p>
-                  <p className="text-sm text-gray-600">24/7 Emergency Support</p>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
+          <div className="relative group overflow-hidden">
+            <div className="flex animate-infinite-scroll hover:[animation-play-state:paused] whitespace-nowrap gap-6 py-6 transition-all duration-800">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex gap-6 shrink-0">
+                  <ContactCard icon={<Phone className="text-accent" />} title="Phone" info={["08032023600", "07032027481"]} />
+                  <ContactCard icon={<Mail className="text-accent" />} title="Email" info={["info@protonsecurity.com", "support@protonsecurity.com"]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Lagos HQ" info={["10, Jibowu street, Yaba,", "Lagos, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Ibadan Branch" info={["22, Ring Road, Challenge,", "Ibadan, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Benin Office" info={["15, Akpakpava Road,", "Benin City, Nigeria."]} />
+                  <ContactCard icon={<MapPin className="text-accent" />} title="Ado-Ekiti Branch" info={["10, Fajuyi Park Way,", "Ado-Ekiti, Nigeria."]} />
+                  <ContactCard icon={<Clock className="text-accent" />} title="Hours" info={["Mon - Fri: 8AM - 6PM", "24/7 Emergency Support"]} />
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Form and Map */}
+      {/* Form and Map Section */}
+      <section className="section-padding bg-background">
+        <div className="container-custom px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <AnimatedSection>
@@ -255,7 +237,7 @@ const Contact = () => {
               </Card>
             </AnimatedSection>
 
-            {/* Google Maps with Red Marker Pinpoint (Original Iframe) */}
+            {/* Google Maps */}
             <AnimatedSection delay={200}>
               <Card className="h-full">
                 <CardContent className="p-0 h-full min-h-[600px]">

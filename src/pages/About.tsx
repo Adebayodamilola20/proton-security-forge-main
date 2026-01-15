@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import AnimatedSection from "@/components/AnimatedSection";
 import boardImage from "@/assets/board-meeting.jpg";
 import img333 from "@/assets/IMG_2174 2.jpg";
+import img2228 from "@/assets/IMG_2228.jpg";
 
 const About = () => {
   const values = [
@@ -97,7 +98,7 @@ const About = () => {
 
             <AnimatedSection delay={200}>
               <img
-                src = {img333}
+                src = {img2228}
                 alt="Proton Security Team"
                 className="rounded-lg shadow-2xl"
               />
@@ -143,7 +144,7 @@ const About = () => {
             <AnimatedSection>
               <div>
                 <Globe size={56} className="text-highlight mb-6" />
-                <h2 className="text-4xl font-bold mb-6">International Interaction</h2>
+                <h2 className="text-4xl font-bold mb-6">National Interaction</h2>
                 <p className="text-lg text-gray-200 mb-6 leading-relaxed">
                   Proton Security maintains strategic partnerships and operational presence across six continents, enabling us to deliver consistent, high-quality security solutions globally.
                 </p>

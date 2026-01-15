@@ -33,12 +33,55 @@ const Board = () => {
             </div>
           </AnimatedSection>
 
+          {/* Board of Directors Section */}
+          <AnimatedSection delay={100}>
+  <div className="text-left mb-16">
+    <div className="inline-block">
+      <h2 className="text-4xl font-bold text-primary mb-2">
+        Board of Directors
+      </h2>
+      <div className="w-24 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mt-1 mb-12"></div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        "AYODEJI BAMGBOSE (Chairman)",
+        "IBRAHIM MUUTA",
+        "OTOTO LAMBERT",
+        "BENEDICT OBASA",
+        "PAUL BAMGBOSE",
+        "ADEKUNMI ODEBUNMI (Managing)"
+      ].map((name, index) => {
+        // Step 1: Split the name into the 'Name' and the 'Bracket' part
+        const parts = name.split(/(\(.*?\))/); 
+
+        return (
+          <div 
+            key={index} 
+            className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm transition-all hover:shadow-md hover:scale-105 group"
+          >
+            {/* Removed the 'uppercase' class here so our JS logic can work */}
+            <p className="text-lg font-bold text-primary tracking-wide group-hover:text-accent transition-colors">
+              {parts.map((part, i) => (
+                // If it starts with '(', make it lowercase. Otherwise, keep it uppercase.
+                <span key={i}>
+                  {part.startsWith('(') ? part.toLowerCase() : part.toUpperCase()}
+                </span>
+              ))}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</AnimatedSection>
+
           {/* Executive Team Heading */}
           <AnimatedSection delay={200}>
             <div className="text-left">
               <div className="inline-block">
                 <h2 className="text-4xl font-bold text-primary mb-2">
-                  Head Of Executives
+                Director of Adminstration
                 </h2>
                 <div className="w-24 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto mt-1 mb-12"></div>
               </div>
